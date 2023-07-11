@@ -94,8 +94,10 @@ func parseConfig() config {
 	if config.MitigationInfo.MitigationType != "appdesign" &&
 		config.MitigationInfo.MitigationType != "osenv" &&
 		config.MitigationInfo.MitigationType != "netenv" &&
-		config.MitigationInfo.MitigationType != "fp" {
-		log.Fatal("[!]Mitigation type needs to be appdesign, osenv, netenv, or fp")
+		config.MitigationInfo.MitigationType != "fp" &&
+		config.MitigationInfo.MitigationType != "library" &&
+		config.MitigationInfo.MitigationType != "acceptrisk" {
+		log.Fatal("[!]Mitigation type needs to be appdesign, osenv, netenv, fp, library, or acceptrisk")
 	}
 
 	return config
